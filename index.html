@@ -11,7 +11,7 @@
             function updateTitle() {
                 if (window._titleLock) return;
                 var now = new Date();
-                document.title = now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
+                document.title = now.toLocaleString('fr-FR', { timeZone: 'Europe/Berlin' });
             }
             updateTitle();
             setInterval(updateTitle, 1000);
@@ -296,14 +296,14 @@
             if (!el) return;
             function update() {
                 var now = new Date();
-                var ankara = now.toLocaleString('en-GB', { timeZone: 'Europe/Istanbul', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                var ankara = now.toLocaleString('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit', second: '2-digit' });
                 el.textContent = ankara;
             }
             update();
             setInterval(update, 1000);
 
             if (weatherEl) {
-                fetch('https://api.open-meteo.com/v1/forecast?latitude=39.9334&longitude=32.8597&current_weather=true&timezone=Europe/Istanbul')
+                fetch('https://api.open-meteo.com/v1/forecast?latitude=39.9334&longitude=32.8597&current_weather=true&timezone=Europe/Berlin')
                     .then(function(r) { return r.json(); })
                     .then(function(d) {
                         if (d && d.current_weather) {
